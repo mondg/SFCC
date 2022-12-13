@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "noLib": true,
+        "target": "es5",
+        "baseUrl": "./",
+        "paths": {
+            "*": [
+                "./*"
+            ]
+        }
+    },
+    "typeAcquisition": {
+        "enable": true
+    },
+    "include": [
+        "./*/cartridge/scripts/**/*.js",
+        "./*/cartridge/controllers/**/*.js"
+    ]
+}

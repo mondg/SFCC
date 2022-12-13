@@ -1,0 +1,16 @@
+{
+    "hooks": [
+        {
+            "name": "app.payment.form.processor.moneris_checkout",
+            "script": "./cartridge/scripts/hooks/payment/processor/moneris_form_processor"
+        },
+        {
+            "name": "app.payment.processor.moneris_checkout",
+            "script": "./cartridge/scripts/hooks/payment/processor/moneris_checkout"
+        },
+        {
+            "name": "app.payment.processor.postAuthorizationHandling",
+            "script": "./cartridge/scripts/hooks/postAuthorizationHandling"
+        }
+    ]
+}

@@ -1,0 +1,3 @@
+<h5>${Resource.msg('account.monerispayment.payment.method', 'account', null)}</h5>
+<p>${Resource.msgf('account.monerispayment.payment.cardType', 'account', null, payment.creditCardType)}</p>
+<p>${Resource.msgf('account.monerispayment.payment.cardNumber', 'account', null, payment.maskedCreditCardNumber)}</p>

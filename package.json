@@ -1,0 +1,89 @@
+{
+  "name": "int_moneris",
+  "version": "1.0.0",
+  "description": "Moneris official cartridge for SFRA",
+  "main": "index.js",
+  "engines": {
+    "node": ">=4.0"
+  },
+  "scripts": {
+    "test": "sgmf-scripts --test test/unit/**/*.js",
+    "cover": "sgmf-scripts --cover 'test/unit'",
+    "test:integration": "sgmf-scripts --integration 'test/integration/**/*.js'",
+    "compile:scss": "sgmf-scripts --compile css",
+    "compile:js": "sgmf-scripts --compile js",
+    "build": "npm run compile:js && npm run compile:scss",
+    "lint": "npm run lint:css && npm run lint:js",
+    "lint:css": "sgmf-scripts --lint css",
+    "lint:js": "sgmf-scripts --lint js",
+    "init:isml": "./node_modules/.bin/isml-linter --init",
+    "lint:isml": "./node_modules/.bin/isml-linter",
+    "build:isml": "./node_modules/.bin/isml-linter --build",
+    "fix:isml": "./node_modules/.bin/isml-linter --autofix",
+    "upload": "sgmf-scripts --upload",
+    "uploadCartridge": "sgmf-scripts --uploadCartridge int_moneris",
+    "watch": "sgmf-scripts --watch",
+    "watch:static": "sgmf-scripts --watch static"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
+    "@babel/preset-env": "^7.6.3",
+    "@tridnguyen/config": "^2.3.1",
+    "appium": "^1.15.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^3.5.0",
+    "chai-subset": "^1.6.0",
+    "cheerio": "0.22.0",
+    "css-loader": "^0.28.11",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^5.0.3",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-sitegenesis": "~1.0.0",
+    "husky": "^4.2.5",
+    "isml-linter": "^5.26.4",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0",
+    "mocha-junit-reporter": "^1.23.1",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^2.1.6",
+    "properties-parser": "^0.3.1",
+    "proxyquire": "1.7.4",
+    "request-promise": "^4.2.4",
+    "sass-loader": "^7.3.1",
+    "sgmf-scripts": "^2.4.2",
+    "shelljs": "^0.8.5",
+    "should": "^13.2.3",
+    "sinon": "^1.17.7",
+    "style-loader": "^0.21.0",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^17.0.0",
+    "stylelint-scss": "^2.5.0",
+    "url": "^0.11.0"
+  },
+  "dependencies": {
+    "bootstrap": "4.3.1",
+    "jquery": "^3.5.1"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "ie >= 10"
+  ],
+  "packageName": "int_moneris",
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run test"
+    }
+  },
+  "paths": {
+    "base": "./storefront-reference-architecture/cartridges/app_storefront_base/"
+  }
+}

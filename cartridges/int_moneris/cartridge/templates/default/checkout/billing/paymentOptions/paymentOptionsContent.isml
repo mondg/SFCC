@@ -1,0 +1,5 @@
+<isloop items="${pdict.order.billing.payment.applicablePaymentMethods}" var="paymentOption">
+    <isif condition="${paymentOption.ID === 'MONERIS_PAYMENT'}">
+        <isinclude template="checkout/billing/paymentOptions/monerisContent" />
+    </isif>
+</isloop>

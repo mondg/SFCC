@@ -1,0 +1,5 @@
+cartridges/int_moneris/cartridge/static/
+coverage/
+doc/
+bin/
+codecept.conf.js

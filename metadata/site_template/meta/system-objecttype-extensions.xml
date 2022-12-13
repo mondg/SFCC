@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="CustomerPaymentInstrument">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="monerisDataKey">
+                <display-name xml:lang="x-default">Moneris data key</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="monerisIssuerId">
+                <display-name xml:lang="x-default">Moneris Issuer ID</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+    </type-extension>
+
+    <type-extension type-id="Order">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="monerisTicket">
+                <display-name xml:lang="x-default">Moneris Ticket</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>true</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="monerisTransactionNo">
+                <display-name xml:lang="x-default">Moneris Transaction Number</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>true</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="monerisReferenceNo">
+                <display-name xml:lang="x-default">Moneris Reference Number</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>true</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="monerisTransactionCode">
+                <display-name xml:lang="x-default">Moneris Transaction Code</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>true</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="monerisResponseCode">
+                <display-name xml:lang="x-default">Moneris Response Code</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>true</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="moneris3dsecureStatus">
+                <display-name xml:lang="x-default">Moneris 3D Secure Status</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>true</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="monerisKountStatus">
+                <display-name xml:lang="x-default">Moneris Kount Status</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>true</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="monerisAVSStatus">
+                <display-name xml:lang="x-default">Moneris AVS Status</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>true</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="monerisCVDStatus">
+                <display-name xml:lang="x-default">Moneris CVD Status</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>true</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="monerisISOResponseCode">
+                <display-name xml:lang="x-default">Moneris ISO Response Code</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentMethod">
+                <display-name xml:lang="x-default">Payment Method</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>true</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="monerisRefundStatus">
+                <display-name xml:lang="x-default">Refund Status</display-name>
+                <type>enum-of-int</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>true</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">REFUND_NOT_SEND</display>
+                        <value>0</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">REFUND_SUCCESSED</display>
+                        <value>1</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">REFUND_DECLINED</display>
+                        <value>2</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="monerisTransactionType">
+                <display-name xml:lang="x-default">Moneris Transaction Type</display-name>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>true</externally-managed-flag>
+                <value-definitions>
+                    <value-definition>
+                        <display xml:lang="x-default">Purchase</display>
+                        <value>00</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Pre-Auth</display>
+                        <value>01</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="cancelledOrder">
+                <display-name xml:lang="x-default">Cancelled Order</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>true</externally-managed-flag>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Moneris">
+                <display-name xml:lang="x-default">Moneris Data</display-name>
+                <attribute attribute-id="monerisTransactionNo"/>
+                <attribute attribute-id="monerisReferenceNo"/>
+                <attribute attribute-id="monerisTransactionCode"/>
+                <attribute attribute-id="monerisResponseCode"/>
+                <attribute attribute-id="paymentMethod"/>
+                <attribute attribute-id="monerisRefundStatus"/>
+                <attribute attribute-id="monerisTransactionType"/>
+                <attribute attribute-id="cancelledOrder"/>
+            </attribute-group>
+            <attribute-group group-id="Moneris Fraud Statuses">
+                <display-name xml:lang="x-default">Moneris Fraud Statuses</display-name>
+                <attribute attribute-id="monerisKountStatus"/>
+                <attribute attribute-id="moneris3dsecureStatus"/>
+                <attribute attribute-id="monerisAVSStatus"/>
+                <attribute attribute-id="monerisCVDStatus"/>
+                <attribute attribute-id="monerisISOResponseCode"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="monerisApiToken">
+                <display-name xml:lang="x-default">Moneris Checkout API Token</display-name>
+                <display-name xml:lang="en">Moneris Checkout API Token</display-name>
+                <description xml:lang="x-default">Moneris Checkout configuration option</description>
+                <description xml:lang="en">Moneris Checkout configuration option</description>
+                <type>password</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="monerisCheckoutId">
+                <display-name xml:lang="x-default">Moneris Checkout Checkout ID</display-name>
+                <display-name xml:lang="en">Moneris Checkout Checkout ID</display-name>
+                <description xml:lang="x-default">Moneris Checkout configuration option</description>
+                <description xml:lang="en">Moneris Checkout configuration option</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="monerisStoreId">
+                <display-name xml:lang="x-default">Moneris Checkout Store ID</display-name>
+                <display-name xml:lang="en">Moneris Checkout Store ID</display-name>
+                <description xml:lang="x-default">Moneris Checkout configuration option</description>
+                <description xml:lang="en">Moneris Checkout configuration option</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="monerisAskCVV">
+                <display-name xml:lang="x-default">Moneris Checkout Ask CVV</display-name>
+                <display-name xml:lang="en">Moneris Checkout Ask CVV</display-name>
+                <description xml:lang="x-default">Moneris Checkout configuration option</description>
+                <description xml:lang="en">Moneris Checkout configuration option</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <default-value>true</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="monerisDynamicDescriptor">
+                <display-name xml:lang="x-default">Moneris Checkout Dynamic Descriptor</display-name>
+                <display-name xml:lang="en">Moneris Checkout Dynamic Descriptor</display-name>
+                <description xml:lang="x-default">Moneris Checkout configuration option</description>
+                <description xml:lang="en">Moneris Checkout configuration option</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <default-value>dyndesc</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="monerisLng">
+                <display-name xml:lang="x-default">Moneris Checkout Language</display-name>
+                <display-name xml:lang="en">Moneris Checkout Language</display-name>
+                <description xml:lang="x-default">Moneris Checkout configuration option</description>
+                <description xml:lang="en">Moneris Checkout configuration option</description>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">En</display>
+                        <value>en</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Fr</display>
+                        <value>fr</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Moneris Checkout">
+                <display-name xml:lang="x-default">Moneris Checkout</display-name>
+                <attribute attribute-id="monerisApiToken"/>
+                <attribute attribute-id="monerisCheckoutId"/>
+                <attribute attribute-id="monerisStoreId"/>
+                <attribute attribute-id="monerisAskCVV"/>
+                <attribute attribute-id="monerisDynamicDescriptor"/>
+                <attribute attribute-id="monerisLng"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

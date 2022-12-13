@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jobs xmlns="http://www.demandware.com/xml/impex/jobs/2015-07-01">
+    <job job-id="MonerisConfirmPayment" priority="0">
+        <description>Picks up uncompleted orders and check if transaction submitted</description>
+        <parameters/>
+        <flow>
+            <context site-id="RefArch"/>
+            <step step-id="confirmPayment" type="custom.confirmMonerisPayment" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="timeFrame">15</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="true">
+                <date>2022-10-10Z</date>
+                <time>09:59:52.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="MonerisRefund" priority="0">
+        <description>Void/Refund orders</description>
+        <parameters/>
+        <flow>
+            <context site-id="RefArch"/>
+            <step step-id="monerisRefund" type="custom.monerisRefund" enforce-restart="false">
+                <description/>
+                <parameters/>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="true">
+                <date>2022-10-10Z</date>
+                <time>08:44:36.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="MonerisPreAuthCompletion" priority="0">
+        <description>Runs completion action on pre-authorized orders.</description>
+        <parameters/>
+        <flow>
+            <context site-id="RefArch"/>
+            <step step-id="monerisCompletion" type="custom.monerisCompletion" enforce-restart="false">
+                <description/>
+                <parameters/>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="true">
+                <date>2022-10-23Z</date>
+                <time>18:18:05.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+</jobs>

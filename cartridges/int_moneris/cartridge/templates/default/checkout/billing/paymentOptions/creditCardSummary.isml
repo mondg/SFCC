@@ -1,0 +1,14 @@
+<div>
+    <isset name="paymentDetails" value="${pdict.order.billing.payment.selectedPaymentInstruments[0]}" scope="page">
+    <isset name="address" value="${pdict.order.billing.billingAddress.address}" scope="page">
+
+    ${Resource.msg('checkout.monerispayment.confirmation.msg', 'checkout', null)}<br/>
+    ${Resource.msgf('checkout.monerispayment.confirmation.customerName', 'checkout', null, address.firstName + ' ' + address.lastName)}<br/>
+    ${Resource.msgf('checkout.monerispayment.confirmation.cardType', 'checkout', null, paymentDetails.creditCardType)}<br/>
+
+    <isif condition="${paymentDetails.creditCardNumber}">
+        ${Resource.msgf('checkout.monerispayment.confirmation.cardNumber', 'checkout', null, '****' + paymentDetails.creditCardNumber)}<br/>
+    <iselse/>
+        ${Resource.msg('checkout.monerispayment.confirmation.storedCard', 'checkout', null)}<br/>
+    </isif>
+</div>

@@ -1,0 +1,5 @@
+<isloop items="${pdict.order.billing.payment.applicablePaymentMethods}" var="paymentOption">
+    <isif condition="${paymentOption.ID === 'MONERIS_PAYMENT'}">
+        <h2>${Resource.msg('checkout.monerispayment.name','checkout',null)}</h2>
+    </isif>
+</isloop>

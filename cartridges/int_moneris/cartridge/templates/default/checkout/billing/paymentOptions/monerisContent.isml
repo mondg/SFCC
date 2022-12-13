@@ -1,0 +1,8 @@
+<div class="tab-pane active moneris-content" id="moneris-content" role="tabpanel">
+    <fieldset class="payment-form-fields">
+        <input type="hidden" class="form-control"
+                name="${pdict.forms.billingForm.paymentMethod.htmlName}"
+                value="MONERIS_PAYMENT"
+        />
+    </fieldset>
+</div>

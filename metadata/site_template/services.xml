@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns="http://www.demandware.com/xml/impex/services/2014-09-26">
+    <service-credential service-credential-id="moneris.credentials">
+        <url>https://gatewayt.moneris.com/chktv2/request/request.php</url>
+    </service-credential>
+
+    <service-credential service-credential-id="moneris.refundCredentials">
+        <url>https://developer.moneris.com:8081/api/transactions/refund</url>
+    </service-credential>
+
+    <service-credential service-credential-id="moneris.preAuthCompletionCredentials">
+        <url>https://developer.moneris.com:8081/api/transactions/preauthcompletion</url>
+    </service-credential>
+
+    <service-credential service-credential-id="moneris.voidCredentials">
+        <url>https://developer.moneris.com:8081/api/transactions/purchasecorrection</url>
+    </service-credential>
+
+    <service-profile service-profile-id="moneris.profile">
+        <timeout-millis>5000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>5</cb-calls>
+        <cb-millis>1000</cb-millis>
+    </service-profile>
+
+    <service service-id="moneris.preAuthCompletion">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>moneris.profile</profile-id>
+        <credential-id>moneris.preAuthCompletionCredentials</credential-id>
+    </service>
+
+    <service service-id="moneris.preload">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>moneris</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>moneris.profile</profile-id>
+        <credential-id>moneris.credentials</credential-id>
+    </service>
+
+    <service service-id="moneris.receipt">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>moneris</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>moneris.profile</profile-id>
+        <credential-id>moneris.credentials</credential-id>
+    </service>
+
+    <service service-id="moneris.refund">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>moneris</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>moneris.profile</profile-id>
+        <credential-id>moneris.refundCredentials</credential-id>
+    </service>
+
+    <service service-id="moneris.void">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>moneris</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>moneris.profile</profile-id>
+        <credential-id>moneris.voidCredentials</credential-id>
+    </service>
+</services>

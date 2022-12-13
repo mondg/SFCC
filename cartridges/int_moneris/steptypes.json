@@ -1,0 +1,89 @@
+{
+    "step-types":{
+       "script-module-step":[
+          {
+             "@type-id":"custom.confirmMonerisPayment",
+             "@supports-parallel-execution":"false",
+             "@supports-site-context":"true",
+             "@supports-organization-context":"true",
+             "description":"Confirm Moneris Payment",
+             "module":"int_moneris/cartridge/scripts/jobs/confirmMonerisPayment.js",
+             "function":"paymentConfirmation",
+             "transactional":"false",
+             "timeout-in-seconds":"10000",
+             "parameters":{
+                "parameter": [
+                    {
+                        "@name": "timeFrame",
+                        "description": "Number of minutes set as the limit for how long ago an order could be created",
+                        "@type": "long",
+                        "@required": "false"
+                    }
+                ]
+            },
+            "status-codes": {
+              "status": [
+                {
+                  "@code": "ERROR",
+                  "description": "Used when an error occurred."
+                }
+              ]
+            }
+          },
+          {
+            "@type-id": "custom.monerisRefund",
+            "@supports-parallel-execution":"false",
+            "@supports-site-context":"true",
+            "@supports-organization-context":"false",
+            "module": "int_moneris/cartridge/scripts/jobs/monerisRefund.js",
+            "description": "Moneris Refund",
+            "transactional":"false",
+            "function": "ordersRefund",
+            "parameters": {
+              "parameter": [
+                {}
+              ]
+            },
+            "status-codes": {
+              "status": [
+                {
+                  "@code": "ERROR",
+                  "description": "Used when an error occurred."
+                },
+                {
+                  "@code": "OK",
+                  "description": "Successfull execution."
+                }
+              ]
+            }
+          },
+          {
+            "@type-id": "custom.monerisCompletion",
+            "@supports-parallel-execution":"false",
+            "@supports-site-context":"true",
+            "@supports-organization-context":"false",
+            "module": "int_moneris/cartridge/scripts/jobs/monerisCompletion.js",
+            "description": "Moneris Completion",
+            "transactional":"false",
+            "function": "ordersCompletion",
+            "parameters": {
+              "parameter": [
+                {}
+              ]
+            },
+            "status-codes": {
+              "status": [
+                {
+                  "@code": "ERROR",
+                  "description": "Used when an error occurred."
+                },
+                {
+                  "@code": "OK",
+                  "description": "Successfull execution."
+                }
+              ]
+            }
+          }
+       ]
+    }
+ }

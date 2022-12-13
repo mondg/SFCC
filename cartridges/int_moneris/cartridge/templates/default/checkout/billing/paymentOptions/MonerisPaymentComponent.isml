@@ -1,0 +1,16 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addJs('/js/checkout.js');
+    assets.addCss('/css/checkout/checkout.css');
+</isscript>
+
+<isif condition="${pdict.action == 'Order-Confirm' || pdict.action == 'Order-Details'}">
+    <isinclude template="checkout/billing/paymentOptions/creditCardSummary" />
+<iselse/>
+    <div id="outerDiv" class="moneris-wrapper">
+        <div id="monerisCheckout"
+            data-ticket="${pdict.order.billing.payment.selectedPaymentInstruments[0].ticket}"
+            data-instance="${pdict.order.billing.payment.selectedPaymentInstruments[0].instance}"
+        ></div>
+    </div>
+</isif>
